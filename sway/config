@@ -4,13 +4,15 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-font main:SourceCodePro Medium 12
+font pango:"UbuntuMono" Medium 14
 
 set $mod Mod4
 set $term foot
-set $displayOutput 
-set $scaleFactor 1.5
-set $touchPad  
+set $displayOutput "Microstep MAG274QRF-QD CA8A281900034" 
+set $displayResolution "2560x1440@164.835Hz"
+set $mouse "1133:16500:Logitech_G305"
+set $scaleFactor 1
+set $touchPad ""
 set $fileExplorer nemo
 set $menu fuzzel
 
@@ -19,12 +21,19 @@ set $menu fuzzel
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-output $displayOutput scale $scaleFactor
+output $displayOutput mode $displayResolution scale $scaleFactor
 
-exec swayidle -w \
-	timeout 200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+# exec swayidle -w \
+#	timeout 200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 
 bindsym $mod+l exec 'swaylock -f -c 000000'
+
+input $mouse {
+	natural_scroll disabled
+	dwt enabled
+	accel_profile "flat"
+	pointer_accel 0.4
+}
 
 input $touchPad {
 	dwt enabled
@@ -42,16 +51,17 @@ input * {
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+k exec $term
+	bindsym $mod+k exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+	bindsym $mod+Shift+q kill
+    	bindsym Alt+F4 kill
 
     # Start your launcher
-    bindsym --release Super_L exec $menu
+	bindsym --release Super_L exec $menu
 
     # Start the file manager
-    bindsym $mod+e exec $fileExplorer
+	bindsym $mod+e exec $fileExplorer
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
