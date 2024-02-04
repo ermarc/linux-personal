@@ -4,14 +4,17 @@
     "height": 35, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["fuzzel", "sway/workspaces", "custom/media"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["fuzzel", "sway/workspaces", "sway/window"],
+    "modules-center": [],
     "modules-right": [
+	"tray",
     	"pulseaudio",
 	"network",
 	"cpu",
+	"memory",
 	"battery",
 	"temperature",
+	"mpd",
 	"clock"],
     // Modules configuration
     // "sway/workspaces": {
@@ -65,8 +68,13 @@
             "deactivated": ""
         }
     },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
     "tray": {
-        // "icon-size": 21,
+       	"icon-size": 21,
         "spacing": 10
     },
     "clock": {
@@ -74,11 +82,14 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
+	"interval": 10,
         "format": "{usage}% ",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+	"interval": 10,
+        "format": "{used}GiB ",
+	"tooltip": false
     },
     "temperature": {
         // "thermal-zone": 2,

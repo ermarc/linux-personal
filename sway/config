@@ -18,8 +18,7 @@ set $menu fuzzel
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /usr/share/backgrounds/sway/prettyforest.jpg fill
 
 output $displayOutput mode $displayResolution scale $scaleFactor
 
@@ -55,7 +54,6 @@ input * {
 
     # Kill focused window
 	bindsym $mod+Shift+q kill
-    	bindsym Alt+F4 kill
 
     # Start your launcher
 	bindsym --release Super_L exec $menu
@@ -200,7 +198,7 @@ bar {
 bindsym $mod+Ctrl+left workspace prev
 bindsym $mod+Ctrl+right workspace next
 
-default_border pixel 8
-gaps inner 8
+default_border pixel 5
+gaps inner 6
 
 include /etc/sway/config.d/*

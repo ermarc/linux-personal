@@ -1,0 +1,12 @@
+nmcli con down DingoSpot
+nmcli con delete DingoSpot
+
+nmcli con add type wifi ifname wlan0 con-name "DingoSpot" ssid "Nombre_de_hotspot"
+nmcli con modify DingoSpot 802-11-wireless.mode ap
+nmcli con modify DingoSpot 802-11-wireless.band bg
+nmcli con modify DingoSpot ipv4.method shared
+nmcli con modify DingoSpot wifi-sec.key-mgmt wpa-psk
+nmcli connection modify DingoSpot 802-11-wireless-security.proto wpa
+nmcli con modify DingoSpot wifi-sec.psk ""
+
+nmcli con up DingoSpot
