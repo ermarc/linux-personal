@@ -1,8 +1,8 @@
 # Script de configuración instantánea
-# v0.0.1
+# Incluye Sway, Waybar, Fuzzel, Foot Terminal y bashrc personal
 
-SCRIPT_VERS="0.0.1"
-SCRIPT_DATE="13/02/2024"
+SCRIPT_VERS="1.0.0"
+SCRIPT_DATE="14/02/2024"
 SCRIPT_LANG="ES"
 
 INSTALL_LOCT=""
@@ -24,21 +24,25 @@ selectOption() {
 }
 
 installToRoot() {
-	echo "Se necesitarán permisos de superusuario..." 
-	echo "Copiando configuración de Sway... " && 
-		sudo mkdir -p /etc/xdg/sway &> /dev/null &&
-		sudo cp ./sway/* /etc/xdg/sway
-	echo "Copiando configuración de Waybar..." &&
-	 	sudo mkdir -p /etc/xdg/waybar &> /dev/null &&	
-		sudo cp ./waybar/* ~/.config/waybar
-	echo "Copiando configuración de Fuzzel..." &&
-	 	sudo mkdir -p /etc/xdg/fuzzel &> /dev/null &&	
-		sudo cp ./fuzzel/* ~/.config/fuzzel
-	echo "Copiando configuración de Foot Terminal..." &&
-	 	sudo mkdir -p /etc/xdg/foot &> /dev/null &&	
-		sudo cp ./foot/* ~/.config/foot
-	echo "Copiando .bashrc a la carpeta del usuario..." &&
-	       	sudo cp ./.bashrc ~
+	echo "Se necesitarán permisos de superusuario..."
+
+	sudo -- sh -c "
+
+	echo Copiando configuración de Sway...  
+		mkdir -p /etc/xdg/sway &> /dev/null
+		cp ./sway/* /etc/xdg/sway
+	echo Copiando configuración de Waybar...
+	 	mkdir -p /etc/xdg/waybar &> /dev/null	
+		cp ./waybar/* /etc/xdg/waybar
+	echo Copiando configuración de Fuzzel...
+	 	mkdir -p /etc/xdg/fuzzel &> /dev/null	
+		cp ./fuzzel/* /etc/xdg/fuzzel
+	echo Copiando configuración de Foot Terminal...
+	 	mkdir -p /etc/xdg/foot &> /dev/null	
+		cp ./foot/* /etc/xdg/foot
+	"
+	echo Copiando .bashrc a la carpeta del usuario...
+	       	cp ./.bashrc ~
 	echo "¡Terminado!"
 }
 
