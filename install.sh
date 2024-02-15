@@ -42,6 +42,8 @@ installToRoot() {
 		cp ./foot/* /etc/xdg/foot
 	echo Copiando .bashrc a la carpeta de root...
 	       	cp ./.bashrc ~
+	echo Copiando prettyforest.jpg a la carpeta de sistema
+		cp ./prettyforest.jpg /usr/share/backgrounds/sway
 	"
 	echo "¡Terminado!"
 }
