@@ -13,7 +13,7 @@ set $displayResolution "2560x1440@164.835Hz"
 set $mouse "1133:16500:Logitech_G305"
 set $scaleFactor 1
 set $touchPad ""
-set $fileExplorer nemo
+set $fileExplorer thunar
 set $menu fuzzel
 
 ### Output configuration
