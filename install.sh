@@ -40,9 +40,9 @@ installToRoot() {
 	echo Copiando configuración de Foot Terminal...
 	 	mkdir -p /etc/xdg/foot &> /dev/null	
 		cp ./foot/* /etc/xdg/foot
-	"
-	echo Copiando .bashrc a la carpeta del usuario...
+	echo Copiando .bashrc a la carpeta de root...
 	       	cp ./.bashrc ~
+	"
 	echo "¡Terminado!"
 }
 
