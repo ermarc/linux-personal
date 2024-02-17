@@ -1,8 +1,7 @@
 {
-	// "layer": "top", // Waybar at top layer
-	// "position": "bottom", // Waybar position (top|bottom|left|right)
-	"height": 35, // Waybar height (to be removed for auto height)
-	// "width": 1280, // Waybar width
+	"layer": "top",
+	"position": "top",
+	"height": 35,
 	// Choose the order of the modules
 	"modules-left": ["sway/window", "sway/workspaces"],
 	"modules-center": [],
@@ -16,26 +15,23 @@
 	"memory",
 	"mpd",
 	"clock"],
-	// Modules configuration
-	// "sway/workspaces": {
-	//     "disable-scroll": true,
-	//     "all-outputs": true,
-	//     "format": "{name}: {icon}",
-	//     "format-icons": {
-	//         "1": "",
-	//         "2": "",
-	//         "3": "",
-	//         "4": "",
-	//         "5": "",
-	//         "urgent": "",
-	//         "focused": "",
-	//         "default": ""
-	//     }
-	// },
+
+	/* Modules configuration */
+	"sway/workspaces": {
+	    "disable-scroll": true,
+	    "all-outputs": true,
+	    "format": "{name}"
+	},
 	"sway/window": {
 		"format": "{app_id}",
 		"min-length": 9,
-		"max-length": 9
+		"max-length": 9,
+		"rewrite": {
+			"(steam.*)": "steam",
+			"(.*edge.*)": "edge",
+			"(.*blueman.*)": "blueman",
+			"(.*JPLFJIO*)": "photopea"
+		}
 	},
 	"sway/mode": {
 		"format": "<span style=\"italic\">{}</span>"
@@ -92,12 +88,16 @@
 	"cpu": {
 		"interval": 10,
 		"format": "{usage}% ",
-		"tooltip": false
+		"tooltip": false,
+		"min-length": 6,
+		"max-length": 6
 	},
 	"memory": {
 		"interval": 5,
 		"format": "{used}GiB ",
-		"tooltip": false
+		"tooltip": false,
+		"min-length": 11,
+		"max-length": 11
 	},
 	"temperature": {
 		// "thermal-zone": 2,
