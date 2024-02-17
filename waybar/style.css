@@ -1,22 +1,17 @@
 * {
     border: none;
-    border-radius: 4px;
-    /* `ttf-font-awesome` is required to be installed for icons */
-    font-family: "Roboto Mono Medium", Helvetica, Arial, sans-serif;
-
-    /* adjust font-size value to your liking: */
+    font-family: "Source Code Pro";
+    font-weight: 500;
     font-size: 19px;
 
     min-height: 0;
 }
 
 window#waybar {
-    background-color: #407150;
-    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    background-color: #2d3b34;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
-    border-radius: 0;
 }
 
 window#waybar.hidden {
@@ -45,7 +40,6 @@ window#waybar.chromium {
     padding: 0 0.4em;
     background-color: transparent;
     color: #ffffff;
-    /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
 }
 
@@ -79,11 +73,30 @@ window#waybar.chromium {
 #pulseaudio,
 #custom-media,
 #mode,
+#tray,
 #mpd {
-    padding: 0 10px;
+    padding: 0 7px;
     margin: 6px 3px; 
-    background-color: #88f1aa;
+    background-color: #74c57f;
     color: #333333;
+}
+
+#clock,
+#tray {
+    border-radius: 8px;
+}
+
+#clock {
+    background-color: #242823;
+    color: rgb(219, 219, 219);
+    padding: 0;
+    margin-right: 3px;
+}
+
+#cpu,
+#memory,
+#battery {
+    background-color: #ddbd82
 }
 
 #window,
@@ -119,11 +132,6 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#pulseaudio.muted {
-    background-color: #f53c3c;
-    color: #333333;
-}
-
 #custom-media.custom-spotify {
     background-color: #66cc99;
 }
@@ -144,13 +152,11 @@ label:focus {
 #pulseaudio-slider trough {
     min-height: 80px;
     min-width: 10px;
-    border-radius: 5px;
     background-color: black;
 }
 
 #pulseaudio-slider highlight {
     min-width: 10px;
-    border-radius: 5px;
     background-color: green;
 }
 
@@ -159,10 +165,33 @@ label:focus {
 }
 
 #tray {
-	margin-right: 5px;
-	padding-right: 5px;
-	border-radius: 0;
-	border-right: 3px solid lightgreen;
+    background-color: #3c6a42;
+}
+
+#pulseaudio,
+#bluetooth,
+#network {
+    background-color: lightblue;
+}
+
+#pulseaudio,
+#cpu {
+    margin-right: 1.5px;
+    border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+#bluetooth,
+#battery {
+    margin-right: 1.5px;
+    margin-left: 1.5px;
+}
+
+#memory,
+#network {
+    margin-left: 1.5px;
+    border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 #mpd.disconnected {

@@ -18,7 +18,7 @@ set $menu fuzzel
 
 ### Output configuration
 #
-output * bg /usr/share/backgrounds/sway/prettyforest.jpg fill
+output * bg /usr/share/backgrounds/sway/darkforest.jpg fill
 
 output $displayOutput mode $displayResolution scale $scaleFactor
 
