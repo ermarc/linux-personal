@@ -52,17 +52,15 @@ installToRoot() {
 
 installToUser() {
 	echo "Copiando configuración de Sway... " &&
-	       	mkdir -p ~/.config/sway	&> /dev/null &&
-	       	cp ./sway/* ~/.config/sway  
+	       	cp -r ./sway ~/.config  
 	echo "Copiando configuración de Waybar..." &&
-	       	mkdir -p ~/.config/waybar &> /dev/null &&
-	       	cp ./waybar/* ~/.config/waybar
+	       	cp -r ./waybar ~/.config
 	echo "Copiando configuración de Fuzzel..." &&
-	       	mkdir -p ~/.config/fuzzel &> /dev/null &&
-	       	cp ./fuzzel/* ~/.config/fuzzel 
+	       	cp -r ./fuzzel ~/.config 
 	echo "Copiando configuración de Foot Terminal..." &&
-	       	mkdir -p ~/.config/foot &> /dev/null &&
-		cp ./foot/* ~/.config/foot 
+		cp -r ./foot ~/.config 
+	echo "Copiando configuración de Hyprland..." &&
+		cp -r ./hypr ~/.config
 	echo "Copiando .bashrc a la carpeta del usuario..." &&
 	       	cp ./.bashrc ~
 	echo "¡Terminado!"
