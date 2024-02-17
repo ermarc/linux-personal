@@ -104,6 +104,14 @@ window#waybar.chromium {
     margin: 0 4px;
 }
 
+#window {
+    font-variant: small-caps;
+    background-color: #242823;
+    border-radius: 8px;
+    margin: 5px 5px;
+    font-family: "Roboto Mono Medium";
+}
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;

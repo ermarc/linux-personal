@@ -32,6 +32,11 @@
 	//         "default": ""
 	//     }
 	// },
+	"sway/window": {
+		"format": "{app_id}",
+		"min-length": 9,
+		"max-length": 9
+	},
 	"sway/mode": {
 		"format": "<span style=\"italic\">{}</span>"
 	},
