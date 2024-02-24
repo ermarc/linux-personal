@@ -1,7 +1,7 @@
 # Script de configuración instantánea
 # Incluye Sway, Waybar, Fuzzel, Foot Terminal y bashrc personal
 
-SCRIPT_VERS="1.1.0"
+SCRIPT_VERS="1.1.1"
 SCRIPT_DATE="24/02/2024"
 SCRIPT_LANG="ES"
 
@@ -30,22 +30,23 @@ installToRoot() {
 
 	echo Copiando configuración de Sway...  
 		mkdir -p /etc/xdg/sway &> /dev/null
-		cp ./sway/* /etc/xdg/sway
+		cp -r ./sway/* /etc/xdg/sway
 	echo Copiando configuración de Waybar...
 	 	mkdir -p /etc/xdg/waybar &> /dev/null	
-		cp ./waybar/* /etc/xdg/waybar
+		cp -r ./waybar/* /etc/xdg/waybar
 	echo Copiando configuración de Fuzzel...
 	 	mkdir -p /etc/xdg/fuzzel &> /dev/null	
-		cp ./fuzzel/* /etc/xdg/fuzzel
+		cp -r ./fuzzel/* /etc/xdg/fuzzel
 	echo Copiando configuración de Foot Terminal...
 	 	mkdir -p /etc/xdg/foot &> /dev/null	
-		cp ./foot/* /etc/xdg/foot
+		cp -r ./foot/* /etc/xdg/foot
 	echo Copiando .bashrc a la carpeta de root...
-	       	cp ./.bashrc ~
+	       	cp -r ./.bashrc ~
 	echo Copiando prettyforest.jpg a la carpeta de sistema...
-		cp ./prettyforest.jpg /usr/share/backgrounds/sway
+		mkdir -p /usr/share/backgrounds
+		cp -r ./images/prettyforest.jpg /usr/share/backgrounds/
 	echo Copiando darkforest.jpg a la carpeta del sistema...
-		cp ./darkforest.jpg /usr/share/backgrounds/sway
+		cp -r ./images/darkforest.jpg /usr/share/backgrounds/
 	"
 	echo "¡Terminado!"
 }
