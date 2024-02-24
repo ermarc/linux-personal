@@ -1,8 +1,8 @@
 # Script de configuración instantánea
 # Incluye Sway, Waybar, Fuzzel, Foot Terminal y bashrc personal
 
-SCRIPT_VERS="1.0.0"
-SCRIPT_DATE="14/02/2024"
+SCRIPT_VERS="1.1.0"
+SCRIPT_DATE="24/02/2024"
 SCRIPT_LANG="ES"
 
 INSTALL_LOCT=""
