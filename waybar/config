@@ -3,7 +3,7 @@
 	"position": "top",
 	"height": 35,
 	// Choose the order of the modules
-	"modules-left": ["sway/window", "sway/workspaces"],
+	"modules-left": ["hyprland/window", "hyprland/workspaces"],
 	"modules-center": [],
 	"modules-right": [
 	"tray",
@@ -13,7 +13,6 @@
 	"cpu",
 	"battery",
 	"memory",
-	"mpd",
 	"clock"],
 
 	/* Modules configuration */
@@ -33,34 +32,22 @@
 			"(.*JPLFJIO*)": "photopea"
 		}
 	},
+	"hyprland/window": {
+		"format": "{title}",
+		"min-length": 16,
+		"max-length": 16,
+		"rewrite": {
+			"(steam.*)": "steam",
+			"(.*edge.*)": "edge",
+			"(.*blueman.*)": "blueman",
+			"(.*JPLFJIO*)": "photopea",
+			"(.*foot.*)": "foot",
+			"(.*firefox.*)": "firefox",
+			"(.*webcord.*)": "webcord",
+		}
+	},
 	"sway/mode": {
 		"format": "<span style=\"italic\">{}</span>"
-	},
-	"mpd": {
-		"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ ",
-		"format-disconnected": "Disconnected ",
-		"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-		"unknown-tag": "N/A",
-		"interval": 2,
-		"consume-icons": {
-			"on": " "
-		},
-		"random-icons": {
-			"off": "<span color=\"#f53c3c\"></span> ",
-			"on": " "
-		},
-		"repeat-icons": {
-			"on": " "
-		},
-		"single-icons": {
-			"on": "1 "
-		},
-		"state-icons": {
-			"paused": "",
-			"playing": ""
-		},
-		"tooltip-format": "MPD (connected)",
-		"tooltip-format-disconnected": "MPD (disconnected)"
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
